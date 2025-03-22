@@ -174,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $affiliate_id = $_SESSION['user_id'];
 
     // Generate a unique tracking link
-    $tracking_link = "https://yourdomain.com/track.php?ref=" . uniqid();
+    $tracking_link = "https:/toolsvault.online/track.php?ref=" . uniqid();
 
     $stmt = $conn->prepare("INSERT INTO tracking_links (affiliate_id, product_id, tracking_link) VALUES (?, ?, ?)");
     $stmt->bind_param("iis", $affiliate_id, $product_id, $tracking_link);
